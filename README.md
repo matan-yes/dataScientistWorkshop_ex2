@@ -1,4 +1,5 @@
-# ex2
+# Assignment 2 Titanic data set
+## Titanic: Machine Learning from Disaster
 ---
 Title: "Assignment2_Titanic"
 Author: "Matan Yeshurun & Alon Galperin"
@@ -12,7 +13,6 @@ We will use the titanic data, based on kaggle's [Machine Learning from Disaster]
 The titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. 
 Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to get on a lifeboat than others, such as women, children and upper-class.
 In this task, you will apply the tools of machine learning to predict which passengers survived the tragedy.
-
 
 ###Variables Description:
 
@@ -34,8 +34,7 @@ In this task, you will apply the tools of machine learning to predict which pass
 
 
 
-# Assignment 2 Titanic data set
-## Titanic: Machine Learning from Disaster
+
 
 
 In this exercise we will work with the Titanic dataset.
