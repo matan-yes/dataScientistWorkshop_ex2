@@ -282,8 +282,6 @@ head(dataframe_train, 5)
 
 # Training models
 ## r-part
-### train an rpart model based on the trainset:
-
 ## DATASET 
 The dataset is the dataset after the changes we done in the section above 
 
@@ -339,7 +337,6 @@ write.csv(result_to_file,file="rpart_statistics_result.csv",row.names = F)
 ![Leaderboard Image](https://github.com/matan-yes/ex2/blob/master/images/Kaggel_rpart_rank.JPG)
 
 ## Random Forest
-### train an Random Forest model based on the trainset:
 
 ## DATASET 
 The dataset is the dataset after the changes we done in the section above 
@@ -415,7 +412,6 @@ write.csv(result_to_file,file="naive_bayes.csv",row.names = F)
 
 
 ## gbm Statistics
-### Train an gbm model based on the trainset:
 
 ## DATASET 
 The dataset is the dataset after the changes we done in the section above 
@@ -478,7 +474,7 @@ res <- cbind(PassengerId=passengersIds,Survived=gmb_pred)
 write.csv(res,file="gbm_results.csv",row.names = F)
 ```
 
-### Result -  Submitted file
+### Results -  Submitted file
 
 [link to submitted file!](https://github.com/matan-yes/ex2/blob/master/results/gbm_results.csv)
 
@@ -493,7 +489,6 @@ write.csv(res,file="gbm_results.csv",row.names = F)
 
 
 # Ensemble (cforest,gbm,rpart)
-
 
 ### Algorithm Description
 We will use in ensemble of the 3 models ():
