@@ -43,9 +43,9 @@ setwd('C://titanic')
 
 2. Read the train.csv file into a dataframe.
    We will set all the empty cells in our dataset to be na.
-   We also read our test set, add a Survived column with empty values, the reason is for making some data preperation, before using in classification models
+   We also read our test set, add a Survived column with empty values, the reason is for making some data preperation, before using in classification models.
    
-   at the end of this part we will have dataframe named "dataframe" that will contain the records from both train and test sets
+ At the end of this chunk we will have dataframe named "dataframe" that will contain the records from both train and test sets.
 ```{r}
 dataframe <- read.csv('train.csv',na.strings = "")
 train_rows <- nrow(dataframe)
@@ -74,8 +74,8 @@ dataframe$Pclass<- as.factor(dataframe$Pclass)
 
 ```
 
-In the dataset we have attributes that are noisy to the decision algorithms.
-This noisy attribtes are: passangerID, ticketID and embarked, we will remove those attributes.
+We can see now that we have attributes that are noisy to the decision algorithms.
+This noisy attribtes are: passangerID, ticketID and embarked, we will remove those attributes later.
 
 ## Data Exploration
 
@@ -261,8 +261,6 @@ PassengerId,Name,Ticket,Cabin and split our data back to train and test
 dataframe_backup <- dataframe # backup the 
 
 # create dataframe that will backup the passengerIds before we delete them from the test set
-#passengersIds <- tail(dataframe$PassengerId, -train_rows)
-#passengersIds <- data.frame(passengersIds)
 passengersIds <- tail(dataframe_backup$PassengerId, -train_rows)
 
 # remove noisy
@@ -271,7 +269,7 @@ dataframe_train<-head(dataframe, train_rows)
 dataframe_test<-tail(dataframe, -train_rows)[-1] # [-1] that means that we delete the passengerID attribute
 
 ```
-##This is our well preperd data set for trainig our model. We can see that the noisy attributes got removed
+## This is our well preperd data set for trainig our model. We can see that the noisy attributes got removed
 ```{r}
 
 str(dataframe_train)
@@ -390,10 +388,9 @@ write.csv(result_to_file,file="random_forest_result.csv",row.names = F)
 library(e1071)
 nb_model <- naiveBayes(Survived~.,data = dataframe_train)
 nb_test_predict <- predict(nb_model, dataframe_test)
-#table(pred=nb_test_predict,true=dataframe_train$Survived)
 
-#mean(nb_test_predict==dataframe_train$Survived)
 
+# Write to disk
 passengersIds <- tail(dataframe_backup$PassengerId, -train_rows)
 
 result<-as.numeric(nb_test_predict)
@@ -417,10 +414,10 @@ write.csv(result_to_file,file="naive_bayes.csv",row.names = F)
 ![Leaderboard Image](https://github.com/matan-yes/ex2/blob/master/images/Kaggel_naive_bayes_rank.JPG)
 
 
-##gbm Statistics
+## gbm Statistics
 # 1. Let's train an gbm model based on the trainset:
 
-##DATASET 
+## DATASET 
 We used our dataset after some changes we have made as listed at the section above 
 
 #### gbm Statistics
