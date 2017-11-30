@@ -130,6 +130,7 @@ dataframe$PersonalTitles<-as.factor(dataframe$PersonalTitles)
 table(dataframe$PersonalTitles)
 ```
 ![str result Image](https://github.com/matan-yes/ex2/blob/master/images/5-feature_titles.JPG)
+
 2.Seperate the Tickets Prefix from the passenger Tickets at the next steps we will remove the Tickets and remain with the prefix Titles only as followes.
 ```{r}
 dataframe$TicketPrefix <- mapply(function(x) {strsplit(x, '\\s+')[[1]]}, as.character(dataframe$Ticket))
@@ -558,7 +559,7 @@ stack.rf <- caretStack(models, method="rf", metric="Accuracy", trControl=stackCo
 #, tuneGrid =expand.grid(mtry = c(2, 3, 6, 9)))
 print(stack.rf)
 ```
-![str result Image]((https://github.com/matan-yes/ex2/blob/master/images/ensamble_mtray.JPG)
+![str result Image](https://github.com/matan-yes/ex2/blob/master/images/ensamble_mtray.JPG)
 
 ### Predict Test File and Write results
 
