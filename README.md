@@ -269,7 +269,7 @@ dataframe_train<-head(dataframe, train_rows)
 dataframe_test<-tail(dataframe, -train_rows)[-1] # [-1] that means that we delete the passengerID attribute
 
 ```
-## This is our well preperd data set for trainig our model. We can see that the noisy attributes got removed
+## This is our well preperd data set for trainig our models. We can see that the noisy attributes got removed
 ```{r}
 
 str(dataframe_train)
@@ -280,14 +280,14 @@ head(dataframe_train, 5)
 ![str result Image](https://github.com/matan-yes/ex2/blob/master/images/12-head_df_train.JPG)
 
 
-### Training models
-##r-part
-# 1. Let's train an rpart model based on the trainset:
+# Training models
+## r-part
+### train an rpart model based on the trainset:
 
-##DATASET 
-We used our dataset after some changes we have made as listed at the section above 
+## DATASET 
+The dataset is the dataset after the changes we done in the section above 
 
-#Algorithm rpart decision tree (Learned at class)
+## Algorithm rpart decision tree (Learned at class)
 ```{r}
 library(rpart)
 library(caret)
@@ -313,7 +313,7 @@ varImp(rpartfit)
 ```
 ![r-part feature importance](https://github.com/matan-yes/ex2/blob/master/images/14-rpart_var_importance.JPG)
 
-#### predection
+#### Predection
 ```{r}
 rpart_prediction <- predict(rpartfit, dataframe_test)
 ```
@@ -326,7 +326,7 @@ result[result==2]<-1
 result_to_file <- cbind(PassengerId=passengersIds ,Survived=result)
 write.csv(result_to_file,file="rpart_statistics_result.csv",row.names = F)
 ```
-### Result -  Submitted file
+### Results -  Submitted file
 
 [link to submitted file!](https://github.com/matan-yes/ex2/blob/master/results/rpart_statistics_result.csv)
 
@@ -338,14 +338,14 @@ write.csv(result_to_file,file="rpart_statistics_result.csv",row.names = F)
 
 ![Leaderboard Image](https://github.com/matan-yes/ex2/blob/master/images/Kaggel_rpart_rank.JPG)
 
-##Random Forest
-# 1. Let's train an Random Forest model based on the trainset:
+## Random Forest
+### train an Random Forest model based on the trainset:
 
-##DATASET 
-We used our dataset after some changes we have made as listed at the section above 
+## DATASET 
+The dataset is the dataset after the changes we done in the section above 
 
 
-# Caret using Random Forest algorithm
+## Caret using Random Forest algorithm
 ```{r}
 
 control <- trainControl(method="cv", number=3)
@@ -367,7 +367,7 @@ result_to_file <- cbind(PassengerId=passengersIds,Survived=result)
 write.csv(result_to_file,file="random_forest_result.csv",row.names = F)
 
 ```
-### Result -  Submitted file
+### Results -  Submitted file
 
 [link to submitted file!](https://github.com/matan-yes/ex2/blob/master/results/random_forest_result.csv)
 
@@ -379,7 +379,7 @@ write.csv(result_to_file,file="random_forest_result.csv",row.names = F)
 
 ![Leaderboard Image](https://github.com/matan-yes/ex2/blob/master/images/Kaggel_random_forest_rank.JPG)
 
-#Naive Bayes
+## Naive Bayes
 
 ```{r}
 
@@ -401,7 +401,7 @@ write.csv(result_to_file,file="naive_bayes.csv",row.names = F)
 
 ```
 ![prediction](https://github.com/matan-yes/ex2/blob/master/images/nb_prediction.JPG)
-### Result -  Submitted file
+### Results -  Submitted file
 
 [link to submitted file!](https://github.com/matan-yes/ex2/blob/master/results/naive_bayes.csv)
 
@@ -415,10 +415,10 @@ write.csv(result_to_file,file="naive_bayes.csv",row.names = F)
 
 
 ## gbm Statistics
-# 1. Let's train an gbm model based on the trainset:
+### Train an gbm model based on the trainset:
 
 ## DATASET 
-We used our dataset after some changes we have made as listed at the section above 
+The dataset is the dataset after the changes we done in the section above 
 
 #### gbm Statistics
 ```{r}
