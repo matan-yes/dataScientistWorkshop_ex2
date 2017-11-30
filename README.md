@@ -568,7 +568,7 @@ stack_prediction<- predict(stack.rf,newdata = dataframe_test)
 stack_prediction<-sapply(stack_prediction, function(x){ as.character(x) == "X1" })
 ```
 
-Write the *PassengerId* and *Survived* attributes to a csv file and submit this file to kaggle's competition 
+Write to file
 
 ```{r}
 res <- cbind(PassengerId=passengersIds,Survived=stack_prediction)
