@@ -1,5 +1,6 @@
 # Assignment 2 Titanic data set
 ## Titanic: Machine Learning from Disaster
+## By Matan Yeshurun & Alon Galperin
 ---
 Title: "Assignment2_Titanic"
 Author: "Matan Yeshurun & Alon Galperin"
@@ -7,14 +8,14 @@ Lecturer: "Sigal Shaked"
 date: "November 20, 2017"
 output: html_document
 ---
-###The Data
+### The Data
 
 We will use the titanic data, based on kaggle's [Machine Learning from Disaster](https://www.kaggle.com/c/titanic) competition. 
 The titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. 
 Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to get on a lifeboat than others, such as women, children and upper-class.
 In this task, you will apply the tools of machine learning to predict which passengers survived the tragedy.
 
-###Variables Description:
+### Variables Description:
 
 
 |Feature |  Description|
@@ -33,13 +34,7 @@ In this task, you will apply the tools of machine learning to predict which pass
 
 
 
-
-
-
-
-In this exercise we will work with the Titanic dataset.
-
-1. Set working directory to be the path: c:\titanic
+1. Set working directory to be the path: c:\titanic. We will set this settings for all chunks using knitr::opts_chunk$set
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE)
@@ -47,8 +42,8 @@ setwd('C://titanic')
 ```
 
 2. Read the train.csv file into a dataframe.
-   We will set all the empty cells in our dataset to be na
-   we also read our test set, add a Survived column with empty values for making some data preperation, before using in classification models
+   We will set all the empty cells in our dataset to be na.
+   We also read our test set, add a Survived column with empty values, the reason is for making some data preperation, before using in classification models
    
    at the end of this part we will have dataframe named "dataframe" that will contain the records from both train and test sets
 ```{r}
