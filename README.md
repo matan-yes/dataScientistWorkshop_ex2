@@ -1,8 +1,8 @@
-# Assignment 2 Titanic data set
+Titanic data set
 ## Titanic: Machine Learning from Disaster
 ## By Matan Yeshurun & Alon Galperin
 ---
-Title: "Assignment2_Titanic"
+Title: "Data_Scientist_Titanic"
 Author: "Matan Yeshurun & Alon Galperin"
 Lecturer: "Sigal Shaked"
 date: "November 20, 2017"
